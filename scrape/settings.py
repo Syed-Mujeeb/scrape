@@ -25,7 +25,7 @@ SECRET_KEY = '6hz)0we^r^2o(!ca2yi13#*1%0$y)qt_jt4vy$iqnfs@#e+l%v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','play-scrap.herokuapp.com']
 
 
 # Application definition
