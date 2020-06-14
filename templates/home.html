@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+ <div class="container mt-4">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-12">
+<div class="card mb-4">
+    <div class="card-body">
+<form method="post" enctype="multipart/form-data">
+	 {% csrf_token %}
+  <div class="form-group row">
+    <label for="appid1" class="col-sm-2 col-form-label">App Id</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="appid1" name="appid" value="com.google.android.gm.lite">
+    </div>
+  </div>
+	<center>
+	 <button type="submit" class="btn btn-primary">Submit</button>
+	 <button type="reset" class="btn btn-danger">Reset</button>
+	</center>
+</form>
+	</div>
+</div>
+	  </div>
+	</div>
+ </div>
+
+
+{% endblock %}

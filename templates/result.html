@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block style %}
+<style>
+*{
+padding:2px;
+}
+.res{
+display:inline-block;
+}
+</style>
+{% endblock style %}
+{% block content %}
+<div class="container-fluid">
+  <br>
+<a class="btn btn-primary" href="{% url 'home' %}" role="button">Back</a>
+
+
+
+  <div class="card mb-4 mt-4">
+    <div class="card-body">
+{% if result %}
+<table class="table">
+    {% for k,v in result.items %}
+    <tr>
+      <td class="table-primary">
+        <p style="text-transform: capitalize;"> {{ k }}:</p>
+      </td>
+      <td class="table-success">
+      {{ v }}
+    </td>
+
+    </tr>
+    {% endfor %}
+
+
+</table>
+</div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+{% block script %}
+
+  {% endblock script %}
