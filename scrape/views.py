@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from google_play_scraper import app
 from django.shortcuts import redirect
+from django.contrib import messages
 from django.conf import settings
 import json
 
@@ -10,19 +11,25 @@ import json
 def home(request):
     url='home.html'
     result=''
+    context={}
     if(request.method=='POST'):
         app_id = request.POST['appid']
-        result = app(
-            app_id = app_id ,
-            lang = 'en' ,  # defaults to 'en'
-            country = 'us'  # defaults to 'us'
-        )
-        print(type(result))
 
+        try:
 
+            result = app(
+                app_id = app_id ,
+                lang = 'en' ,  # defaults to 'en'
+                country = 'us'  # defaults to 'us'
+            )
+            print(type(result))
 
-        request.session['result'] = result
-        return redirect('/result')
+            print(result)
+
+            request.session['result'] = result
+            return redirect('/result')
+        except:
+            messages.error(request , "Invalid Id . Please check")
 
 
 
