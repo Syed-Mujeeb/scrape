@@ -1,1 +1,1 @@
-web: gunicorn SSL.wsgi --log-file -
+web: gunicorn scrape.wsgi --log-file -
