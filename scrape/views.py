@@ -1,5 +1,7 @@
 from django.shortcuts import render,redirect,HttpResponse
 from google_play_scraper import app
+from django.shortcuts import redirect
+from django.conf import settings
 import json
 
 
@@ -24,14 +26,23 @@ def home(request):
 
 
 
+
+
     return render(request,url)
 
 
 def result(request) :
     url = 'result.html'
-    title='Scrape Results'
-    heading='Scrape Results'
+    title='Scrap Results'
+    heading='Scraping Results'
     result= request.session.get('result')
     print(type(result))
 
     return render(request , url,{'result': result,'title':title,'heading':heading})
+
+def handler404(request,exception=None):
+    context = {"project_name":settings.PROJECT_NAME}
+    return redirect('')
+# def handler500(request,exception):
+#     context = {"project_name":settings.PROJECT_NAME}
+#     return render('500.html')
