@@ -16,9 +16,9 @@ display:inline-block;
 
 
 
-  <div class="card mb-4 mt-4">
-    <div class="card-body">
+
 {% if result %}
+        <div class="table-responsive mt-2">
 <table class="table">
     {% for k,v in result.items %}
     <tr>
@@ -34,7 +34,7 @@ display:inline-block;
 
 
 </table>
-</div>
+
   </div>
 </div>
 {% endif %}
