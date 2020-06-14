@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name="home"),
     path('result',views.result,name="result"),
-    # re_path(r'^' , views.home,name="404") ,
+    re_path(r'^' , views.home,name="home") ,
     # path('',views.handler404,name="400"),
     # path('500',views.handler500,name="500")
 
