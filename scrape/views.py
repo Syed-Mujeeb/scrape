@@ -22,10 +22,6 @@ def home(request):
                 lang = 'en' ,  # defaults to 'en'
                 country = 'us'  # defaults to 'us'
             )
-            print(type(result))
-
-            print(result)
-
             request.session['result'] = result
             return redirect('/result')
         except:
